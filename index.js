@@ -22,3 +22,17 @@ function distanceTravelledInFeet(start, end) {
         return (end - start) * 264;
     }
 }
+
+function calculatesFarePrice(start, end) {
+    const distanceF = distanceTravelledInFeet(start, end);
+    if (distanceF <= 400) {
+        return 0;
+    } else if (distanceF > 400 && distanceF <= 2000) {
+        return (distanceF - 400) * 0.02;
+    } else if (distanceF > 2000 && distanceF <= 2500) {
+        return 25;
+    } else {
+        return "cannot travel that far";
+    }
+}
+ 
